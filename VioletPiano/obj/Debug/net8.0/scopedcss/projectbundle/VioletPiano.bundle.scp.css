@@ -1,0 +1,118 @@
+/* _content/VioletPiano/Components/Layout/MainLayout.razor.rz.scp.css */
+#blazor-error-ui[b-qgyh4jvwbf] {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss[b-qgyh4jvwbf] {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+/* _content/VioletPiano/Components/Pages/Home.razor.rz.scp.css */
+/* 主卡片样式 */
+.home-card[b-s8qp1kgli8] {
+    padding: 4rem !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 图标容器 */
+.home-icon-container[b-s8qp1kgli8] {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+/* 标题 */
+.home-title[b-s8qp1kgli8] {
+    font-size: 1.875rem !important;
+    font-weight: 300 !important;
+    color: #673ab7 !important;
+    margin-bottom: 0.5rem;
+}
+
+.home-subtitle[b-s8qp1kgli8] {
+    font-size: 1rem;
+    color: #757575;
+    margin-bottom: 2rem;
+}
+
+/* 状态消息颜色 */
+.home-status-message[b-s8qp1kgli8] {
+    font-size: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.home-status-success[b-s8qp1kgli8] {
+    color: #4caf50;
+}
+
+.home-status-error[b-s8qp1kgli8] {
+    color: #f44336;
+}
+
+/* 使用提示 */
+.home-hint[b-s8qp1kgli8] {
+    color: #9e9e9e;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 1.25rem;
+}
+
+/* 结果弹窗整体遮罩 */
+.result-modal-overlay[b-s8qp1kgli8] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* 弹窗内容框 */
+.result-modal-content[b-s8qp1kgli8] {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+    .result-modal-content h3[b-s8qp1kgli8] {
+        margin: 0 0 10px 0;
+        color: #333;
+    }
+
+    .result-modal-content p[b-s8qp1kgli8] {
+        color: #666;
+        margin: 0 0 25px 0;
+    }
+
+.result-modal-actions[b-s8qp1kgli8] {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}

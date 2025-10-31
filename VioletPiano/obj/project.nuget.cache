@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "HIKdOtOMsZ8=",
+  "success": true,
+  "projectFilePath": "C:\\YZ\\VioletPiano\\VioletPiano\\VioletPiano.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\bemit\\2.2.0\\bemit.2.2.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\blazorpagescript\\1.0.0\\blazorpagescript.1.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\deepcloner.core\\0.1.0\\deepcloner.core.0.1.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\fluentvalidation\\11.4.0\\fluentvalidation.11.4.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.4.0\\fluentvalidation.dependencyinjectionextensions.11.4.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\masa.blazor\\1.10.0\\masa.blazor.1.10.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.0\\microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.0\\microsoft.aspnetcore.components.8.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.0\\microsoft.aspnetcore.components.analyzers.8.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\8.0.0\\microsoft.aspnetcore.components.authorization.8.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\8.0.0\\microsoft.aspnetcore.components.forms.8.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\microsoft.aspnetcore.components.web\\8.0.0\\microsoft.aspnetcore.components.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\microsoft.aspnetcore.metadata\\8.0.0\\microsoft.aspnetcore.metadata.8.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\microsoft.extensions.options\\8.0.0\\microsoft.extensions.options.8.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\microsoft.jsinterop\\8.0.0\\microsoft.jsinterop.8.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\oneof\\3.0.223\\oneof.3.0.223.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\oneof.sourcegenerator\\3.0.223\\oneof.sourcegenerator.3.0.223.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
+    "C:\\Users\\zhangyuan\\.nuget\\packages\\util.reflection\\1.0.3\\util.reflection.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

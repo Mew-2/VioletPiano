@@ -1,0 +1,17 @@
+﻿@inherits LayoutComponentBase
+
+<MApp>
+    <NavMenu />
+    <MMain Style="height: calc(100vh - 64px);">
+        <!-- 减去导航条高度 -->
+        <MContainer Fluid Class="fill-height d-flex align-center">
+            @Body
+        </MContainer>
+    </MMain>
+</MApp>
+
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+</div>

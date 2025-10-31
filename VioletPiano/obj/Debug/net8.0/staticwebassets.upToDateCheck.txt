@@ -1,0 +1,14 @@
+wwwroot\css\app.css
+wwwroot\css\materialdesign\v7.1.96\css\materialdesignicons.min.css
+wwwroot\css\materialdesign\v7.1.96\css\materialdesignicons.min.css.map
+wwwroot\css\materialdesign\v7.1.96\fonts\materialdesignicons-webfont.eot
+wwwroot\css\materialdesign\v7.1.96\fonts\materialdesignicons-webfont.ttf
+wwwroot\css\materialdesign\v7.1.96\fonts\materialdesignicons-webfont.woff
+wwwroot\css\materialdesign\v7.1.96\fonts\materialdesignicons-webfont.woff2
+wwwroot\css\ssr.css
+wwwroot\favicon.png
+wwwroot\outputs\215a4926-09e0-4241-8b91-14b664220864.mid
+wwwroot\outputs\2e91321e-0f37-425b-b714-5a88db68f2e4.mid
+wwwroot\uploads\2da943dc-b963-4435-a2e1-4f190a0cb7b6.mp3
+wwwroot\uploads\b6b9e905-f51e-489e-837d-d182774486ae.mp3
+Components\Layout\NavMenu.razor.js

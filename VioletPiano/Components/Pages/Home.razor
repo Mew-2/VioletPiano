@@ -1,0 +1,160 @@
+﻿@page "/"
+@using Masa.Blazor
+@using VioletPiano.Services
+@inject NavigationManager Navigation
+@inject PythonProcessorService PythonProcessor
+@inject FileDownloadService FileDownloadService
+@rendermode InteractiveServer
+
+<PageTitle>Violet Piano - AI钢琴扒谱</PageTitle>
+
+<MContainer Fluid Class="fill-height">
+    <MRow Align="AlignTypes.Center" Justify="JustifyTypes.Center" Class="fill-height">
+        <MCol Cols="12" Md="6" Lg="4">
+            <!-- 主卡片 -->
+            <MCard Class="home-card text-center">
+                <MCardText>
+                    <!-- 图标 -->
+                    <div class="home-icon-container">
+                        <MIcon Size="40" Color="white">piano</MIcon>
+                    </div>
+
+                    <!-- 标题 -->
+                    <h1 class="home-title">Violet Piano</h1>
+                    <p class="home-subtitle">上传歌曲，一键生成钢琴谱</p>
+
+                    <!-- 文件上传 -->
+                    <div class="mb-5">
+                        <MFileInput TValue="IBrowserFile"
+                                    Outlined
+                                    PrependIcon="audiotrack"
+                                    Label="选择音频文件"
+                                    Accept=".mp3,.wav,.flac,.m4a"
+                                    HideDetails="true"
+                                    @bind-Value="SelectedFile"
+                                    Class="mb-4">
+                        </MFileInput>
+                    </div>
+
+                    <!-- 生成按钮 -->
+                    <MButton XLarge
+                             Color="purple darken-2"
+                             Dark
+                             Block
+                             OnClick="ProcessAudio"
+                             Disabled="!CanProcess"
+                             Loading="IsProcessing"
+                             Height="48"
+                             Class="mb-4">
+                        <MIcon Left>auto_awesome</MIcon>
+                        @ButtonText
+                    </MButton>
+
+                    <!-- 状态提示 -->
+                    @if (!string.IsNullOrEmpty(StatusMessage))
+                    {
+                        <div class="home-status-message @(IsError ? "home-status-error" : "home-status-success")">
+                            @StatusMessage
+                        </div>
+                    }
+                </MCardText>
+            </MCard>
+
+            <!-- 使用提示 -->
+            <div class="home-hint">
+                <MIcon Small>info</MIcon>
+                <span>支持MP3、WAV等常见格式，处理可能需要几分钟时间</span>
+            </div>
+        </MCol>
+    </MRow>
+</MContainer>
+
+<!-- 结果弹窗 -->
+@if (ShowResult)
+{
+    <div class="result-modal-overlay">
+        <div class="result-modal-content">
+            <MIcon Size="48" Color="green" Style="margin-bottom: 15px;">check_circle</MIcon>
+            <h3>乐谱生成完成！</h3>
+            <p>您的钢琴谱已准备就绪</p>
+
+            <div class="result-modal-actions">
+                <!-- 使用NavigationManager导航到文件URL实现下载 -->
+                <MButton Color="purple" OnClick="() => Navigation.NavigateTo(DownloadUrl, forceLoad: true)">
+                    <MIcon Left>download</MIcon>
+                    下载MIDI
+                </MButton>
+                <MButton Text Color="purple" OnClick="CloseResult">
+                    关闭
+                </MButton>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private IBrowserFile SelectedFile;
+    private bool IsProcessing = false;
+    private bool ShowResult = false;
+    private string StatusMessage = "";
+    private bool IsError = false;
+    private string GeneratedMidiPath = "";
+    private string DownloadUrl => !string.IsNullOrEmpty(GeneratedMidiPath) ?
+        FileDownloadService.GetRelativeUrl(GeneratedMidiPath) : "";
+
+    private bool CanProcess => SelectedFile != null && !IsProcessing;
+    private string ButtonText => IsProcessing ? "AI处理中..." : "生成钢琴谱";
+
+    private async Task ProcessAudio()
+    {
+        if (SelectedFile == null) return;
+
+        IsProcessing = true;
+        StatusMessage = "正在上传并分析音频文件...";
+        IsError = false;
+        StateHasChanged();
+
+        try
+        {
+            // 调用Python处理服务
+            var result = await PythonProcessor.ProcessAudioAsync(
+                SelectedFile.OpenReadStream(maxAllowedSize: 50 * 1024 * 1024), // 50MB限制
+                SelectedFile.Name
+            );
+
+            if (result.success)
+            {
+                GeneratedMidiPath = result.outputPath;
+                IsProcessing = false;
+                ShowResult = true;
+                StatusMessage = "";
+            }
+            else
+            {
+                IsProcessing = false;
+                StatusMessage = result.message;
+                IsError = true;
+            }
+        }
+        catch (Exception ex)
+        {
+            IsProcessing = false;
+            StatusMessage = $"处理失败: {ex.Message}";
+            IsError = true;
+        }
+
+        StateHasChanged();
+    }
+
+    private void CloseResult()
+    {
+        ShowResult = false;
+        SelectedFile = null;
+        StatusMessage = "";
+        GeneratedMidiPath = "";
+        StateHasChanged();
+    }
+
+    [Inject]
+    private IWebHostEnvironment _webHostEnvironment { get; set; }
+}
